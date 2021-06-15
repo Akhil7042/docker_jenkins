@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'master' , url: 'https://github.com/aarsh2211/docker_jenkins.git'
+                git branch: 'master' , url: 'https://github.com/Akhil7042/docker_jenkins.git'
 
                 // Run Maven on a Unix agent.
                 bat "mvn clean install"

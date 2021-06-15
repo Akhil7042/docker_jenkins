@@ -1,5 +1,5 @@
-FROM openjdk 
+FROM openjdk
 
-COPY target/my-app-1.0-SNAPSHOT.jar /deployments/
+COPY target/team-three-1.0-SNAPSHOT.jar /deployments/
 
-CMD java -cp /deployments/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+CMD java -cp /deployments/team-three-1.0-SNAPSHOT.jar com.mycompany.app.App

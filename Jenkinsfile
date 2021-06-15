@@ -14,7 +14,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "mvn clean install"
-                sh "docker exec -it 21d8a106fb67 chmod 777 /var/run/docker.sock"
+                
                 sh "docker image build -t java-app ."
                 sh "docker run java-app:latest"
 

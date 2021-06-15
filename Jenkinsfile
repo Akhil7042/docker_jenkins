@@ -1,4 +1,4 @@
-  pipeline {
+pipeline {
     agent any
 
     tools {
@@ -10,13 +10,12 @@
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'master' , url: 'https://github.com/Akhil7042/docker_jenkins.git'
+                git branch: 'master' , url: 'https://github.com/aarsh2211/docker_jenkins.git'
 
                 // Run Maven on a Unix agent.
                 bat "mvn clean install"
-              
-                docker image build -t java-app
-                docker run java-app:lates
+                bat "docker image build -t java-app ."
+                bat "docker run java-app:latest"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -32,4 +31,3 @@
             }
         }
     }
-}
